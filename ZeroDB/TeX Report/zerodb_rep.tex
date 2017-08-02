@@ -1,0 +1,246 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.4 (15/5/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,twocolumn]{article}
+
+\usepackage{blindtext} % Package to generate dummy text throughout this template 
+\usepackage{amsmath}
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage{graphicx}
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+\usepackage{listings}
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+\usepackage{framed}
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+%\fancyhead[C]{Running title $\bullet$ May 2016 $\bullet$ Vol. XXI, No. 1} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{Enterprise Grade Security and Data Protection for Big Data in the Cloud Using ZeroDB} % Article title
+\author{%
+\textsc{Shayan Fazeli - Sepideh Berangi - Foad Jafari} \\[1ex] % Your name
+\normalsize Sharif University of Technology \\ % Your institution
+\normalsize \href{mailto:shayan.fazeli@gmail.com}{shayan.fazeli@gmail.com} % Your email address
+%\and % Uncomment if 2 authors are required, duplicate these 4 lines if more
+%\textsc{Jane Smith}\thanks{Corresponding author} \\[1ex] % Second author's name
+%\normalsize University of Utah \\ % Second author's institution
+%\normalsize \href{mailto:jane@smith.com}{jane@smith.com} % Second author's email address
+}
+\date{\today} % Leave empty to omit a date
+\renewcommand{\maketitlehookd}{%
+\begin{abstract}
+\noindent
+The usage of big data analytics, a concept that nowadays everyone is familiar with, is growing continuously. Aside from all the advantages that this concept is offering, security is under debate. ZeroDB is a system like CryptDB that offers the benefits of database systems and the confidentiality of encryption schemas at the same time. As stated in zerodb's website: ``ZeroDB enables enterprises to use the Cloud for storage and computation while keeping encryption keys on-premise.''. In this approach we start working with this system from scratch.
+\end{abstract}
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+\lettrine[nindent=0em,lines=3]{T} he confidentiality, authentication and integrity, are three main factors of a system's security. These factors must be addressed with encryption schemas that are secure to certain attacks. ZeroDB, uses these encryption schemas to provide us with a database system which has a layer of protection in front of it. In this project, we take a look at different aspects of this package.
+
+\section{Installation}
+In this part the installation of zerodb package is discussed in a step-by-step manner. Our version is installed on a specific linux distribution (ubuntu 16.04), but the installation procedure is pretty much the same for other linux distributions. First of all, python installer package known as ``pip'' must be collected and installed. This can be done using the following command:
+\begin{framed}
+sudo apt-get install python-pip
+\end{framed}
+Note that we used python2.7 as our environment for installing zerodb. Now pip is installed and ready to be used, therefore, zerodb python package can be installed using this command:
+\begin{framed}
+sudo pip install zerodb
+\end{framed}
+The version of zerodb which is available for pip will be detected automatically. When this is done, we need to clone the zerodb's repository from github. To do so, a new folder should be created. When in that new folder, one can insert this command to clone it:
+\begin{framed}
+git clone http://github.com/zerodb/\\zerodb-server.git
+\end{framed}
+After this phase, the requirements (like zerodb-server) must be installed. Change the working directory using ``cd'' command to the  ``demo'' folder inside zerodb's repository. In that, there is a file named ``requirements.txt'' that can be used as follows to install the necessary dependencies:
+\begin{framed}
+sudo pip install -r requirements.txt
+\end{framed}
+Now, run this command:
+\begin{framed}
+zerodb-manager init\_db
+\end{framed}
+Now the user properties of the manager can be set.
+When this is done, zerodb is ready to use. Invoke zerodb using the following command:
+\begin{framed}
+zerodb-server
+\end{framed}
+Now, using python, this database system can be manipulated.
+\section{Manipulation}
+A table can be defined as follows:
+\begin{framed}
+\begin{lstlisting}[language=python]
+class Employee(Model):
+    name = Field()
+    surname = Field()
+    description = Text()
+    salary = Field()
+
+    def __repr__(self):
+        return 
+        "<%s %s who earns $%s>" 
+        % (self.name, 
+        self.surname, 
+        self.salary)
+\end{lstlisting}
+\end{framed}
+
+Using ``create.py'' script provided in demo folder, this table can be filled with many random values. Then, we head to the query part to see how we can ask for some information.
+\section{Queries}
+A video of submitting queries is sent along with this report. Supported queries are listed below:
+\begin{framed}
+Contains(index\_name, value)\\
+Contains query.\\
+Eq(index\_name, value)\\
+    Equals query.\\
+NotEq(index\_name, value)\\
+    Not equal query\\
+Gt(index\_name, value)\\
+    Greater than query.\\
+Lt(index\_name, value)\\
+    Less than query.\\
+Ge(index\_name, value)\\
+    Greater (or equal) query.\\
+Le(index\_name, value)\\
+    Less (or equal) query.\\
+DoesNotContain(index\_name, value)\\
+    Does not contain query\\
+Any(index\_name, value)\\
+    Any of query.\\
+NotAny(index\_name, value)\\
+    Not any of query (ie, None of query)\\
+All(index\_name, value)\\
+    All query.\\
+NotAll(index\_name, value)\\
+    NotAll query.\\
+InRange(index\_name, start, end, start\_exclusive=False, end\_exclusive=False)\\
+    Index value falls within a range.\\
+NotInRange(index\_name, start, end, start\_exclusive=False, end\_exclusive=False)\\
+    Index value falls outside a range. 
+ \end{framed}
+
+Logic operators are listed below as well:
+\begin{framed}
+
+“\$and”: And\\
+    Joins query clauses with a logical AND returns all documents that match the conditions of both clauses.\\
+“\$or”: Or\\
+    Joins query clauses with a logical OR returns all documents that match the conditions of either clause.\\
+“\$not”: Not\\
+    Inverts the effect of a query expression and returns documents that do not match the query expression. 
+\end{framed}
+
+And for field operations we have these operators:
+\begin{framed}
+
+“\$eq”: Eq\\
+    Matches values that are equal to a specified value.\\
+“\$ne”: NotEq\\
+    Matches all values that are not equal to a specified value.\\
+“\$lt”: Lt\\
+    Matches values that are less than a specified value.\\
+“\$lte”: Le\\
+    Matches values that are less than or equal to a specified value.\\
+“\$gt”: Gt\\
+    Matches values that are greater than a specified value.\\
+“\$gte”: Ge\\
+    Matches values that are greater than or equal to a specified value.\\
+“\$range”: InRange\\
+    Matches values that fall within a specified range.\\
+“\$nrange”: NotInRange\\
+    Matches values that do not fall within a specified range.\\
+“\$text”: Contains\\
+    Performs text search for a specified value..\\
+“\$ntext”: DoesNotContain\\
+    Performs text search for the lack of a specified value.\\
+“\$in”: Any\\
+    Matches any of the values specified in an array.\\
+“\$all”: All\\
+    Matches arrays that contain all elements specified in the query.\\
+“\$nany”: NotAny\\
+    Matches none of the values specified in an array.\\
+“\$nin”: NotAll\\
+    Matches arrays that contain all elements specified in the query. \\
+   \end{framed}
+
+
+An script for testing simple queries is also written and is sent along.
+
+
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+\bibitem[ZeroDB]{dalaltriggs2005}
+\newblock http://zerodb.com
+ 
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

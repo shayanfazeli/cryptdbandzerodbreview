@@ -1,0 +1,31 @@
+\contentsline {section}{\numberline {1}آشنایی با CryptDB}{3}{section.1}
+\contentsline {section}{\numberline {2}دلایل استفاده از CryptDB}{3}{section.2}
+\contentsline {paragraph}{یک مثال}{3}{section*.2}
+\contentsline {section}{\numberline {3}رمز نگاری پیازی}{3}{section.3}
+\contentsline {subsection}{\numberline {3‏.‏1}لایه های پیازی}{3}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3‏.‏1‏.‏1}دستور GroupBy}{4}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3‏.‏1‏.‏2}دستور sum}{4}{subsubsection.3.1.2}
+\contentsline {section}{\numberline {4}شیوه های رمز نگاری}{4}{section.4}
+\contentsline {subsection}{\numberline {4‏.‏1}RND}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4‏.‏2}HOM}{4}{subsection.4.2}
+\contentsline {subsection}{\numberline {4‏.‏3}SEARCH}{4}{subsection.4.3}
+\contentsline {subsection}{\numberline {4‏.‏4}DET}{5}{subsection.4.4}
+\contentsline {subsection}{\numberline {4‏.‏5}OPE}{5}{subsection.4.5}
+\contentsline {subsection}{\numberline {4‏.‏6}JOIN , OPE-JOIN}{5}{subsection.4.6}
+\contentsline {paragraph}{یک مثال}{5}{section*.3}
+\contentsline {section}{\numberline {5}اجرای CryptDB}{5}{section.5}
+\contentsline {paragraph}{توجه:}{6}{section*.4}
+\contentsline {section}{\numberline {6}موارد استفاده CryptDB}{6}{section.6}
+\contentsline {section}{\numberline {7}Query ها در CrypDB}{7}{section.7}
+\contentsline {section}{\numberline {8}نتایج تست CryptDB در BenchMark ها}{7}{section.8}
+\contentsline {paragraph}{توجه}{7}{section*.5}
+\contentsline {section}{\numberline {9}JDBC}{8}{section.9}
+\contentsline {section}{\numberline {10}MySQL about }{8}{section.10}
+\contentsline {section}{\numberline {11}موارد مورد نیاز}{8}{section.11}
+\contentsline {section}{\numberline {12}چگونگی نصب در Linux}{8}{section.12}
+\contentsline {section}{\numberline {13}MySQL در java\\}{9}{section.13}
+\contentsline {section}{\numberline {14}نحوه اتصال به MySQL }{10}{section.14}
+\contentsline {section}{\numberline {15}برقراری ارتباط با DataBase}{10}{section.15}
+\contentsline {section}{\numberline {16}نحوه فرستادن Query}{10}{section.16}
+\contentsline {section}{\numberline {17}دریافت result}{11}{section.17}
+\contentsline {section}{\numberline {18}گرفتن خطاها}{11}{section.18}
